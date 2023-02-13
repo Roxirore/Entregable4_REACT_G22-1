@@ -1,11 +1,11 @@
 import React from 'react'
 import { useForm } from 'react-hook-form';
 
-const FormUser = () => {
-const { reset, register, handleSubmit} = useForm()
-const submit = data => {
-
-}
+const FormUser = ( { createNewUser}) => {
+    const { reset, register, handleSubmit} = useForm()
+    const submit = data => {
+        createNewUser(data) 
+    }
   return (
     <form onSubmit={handleSubmit(submit)}>
       <div>

@@ -2,6 +2,7 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import './App.css'
 import FormUser from './components/FormUser'
+import UserCard from './components/UserCard'
 
 function App() {
 
@@ -27,10 +28,33 @@ const createNewUser = data => {
     })
     .catch(error => console.log(error))
 }
+
+const deleteUserById = id => {
+  const url = `https://users-crud.academlo.tech/users/${id}/`
+  axios.delete(url)
+     .then(res => {
+      console.log(res.data)
+      getAllUsers()
+    })
+     .catch(error => console.log(error))
+}
   return (
     <div className="App">
       <h1>users</h1>
-      <FormUser />
+      <FormUser 
+        createNewUser={createNewUser}
+      />
+      <div>
+        {
+          users?.map(user => (
+            <UserCard 
+              key={user.id}
+              user={user}
+              deleteUserById={deleteUserById}
+            />
+          ))
+        }
+      </div>
     </div>
   )
 }
