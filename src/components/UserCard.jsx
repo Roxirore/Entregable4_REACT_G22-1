@@ -1,6 +1,6 @@
 import React from 'react'
 
-const UserCard = ( { user, deleteUserById, setUpdateInfo }) => {
+const UserCard = ( { user, deleteUserById, setUpdateInfo, handleOpen }) => {
 
     const handleDelete = () => {
         deleteUserById(user.id)
@@ -8,6 +8,7 @@ const UserCard = ( { user, deleteUserById, setUpdateInfo }) => {
 
     const handleUpdate = () => {
         setUpdateInfo(user)
+        handleOpen()
     }
   return (
     <article>

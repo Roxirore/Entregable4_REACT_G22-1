@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useForm } from 'react-hook-form';
 import defaultValues from '../utils/defaultValues';
 
-const FormUser = ( { createNewUser, updateInfo, updateUserById}) => {
+const FormUser = ( { createNewUser, updateInfo, updateUserById, handleClose, setUpdateInfo}) => {
     const { reset, register, handleSubmit} = useForm()
 
 useEffect(() => {
@@ -20,14 +20,19 @@ useEffect(() => {
         } else {
             createNewUser(data) 
         }
-
-
-        
+        handleClose()
         reset(defaultValues)
+    }
+
+    const handleX = () => {
+      reset(defaultValues)
+      setUpdateInfo()
+      handleClose()
     }
   return (
     <form className='form' onSubmit={handleSubmit(submit)}>
       <h2 className='form__title'>Form User</h2>
+      <div onClick={handleX} className='form__x'>X</div>
       <div className='form__item'>
         <label className='form__label' htmlFor="email">Email</label>
         <input className='form__input' {...register('email')} type="email" id="email"/>
