@@ -26,10 +26,10 @@
 }
 .app__btn-form {
   font-family: inherit;
-  width: 12%;
+  width: 10rem;
   padding: 0.8em;
   background-color: #F2A07B;
-  color: #662753;
+  color: #3C1B1F;
   cursor: pointer;
   box-shadow: 1px 1px 5px #3C1B1F;
   border-radius: 5%;
