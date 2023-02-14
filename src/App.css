@@ -43,6 +43,7 @@
   color: #F2F4C3;
   border-radius: 0.7em;
   position: relative;
+  box-shadow: 1px 1px 5px #F2A07B;
 }
 .form__title {
   font-size: 1.5rem;
@@ -62,6 +63,7 @@
 .form__item {
   display: flex;
   flex-direction: column;
+  padding-top: 0.8em;
   gap: 0.3em;
   color: #F2F4C3;
 }
