@@ -31,8 +31,8 @@ useEffect(() => {
     }
   return (
     <form className='form' onSubmit={handleSubmit(submit)}>
-      <h2 className='form__title'>Form User</h2>
-      <div onClick={handleX} className='form__x'>X</div>
+      <h2 className='form__title'>New User</h2>
+      <div onClick={handleX} className='form__x'><i className='bx bxs-trash'></i></div>
       <div className='form__item'>
         <label className='form__label' htmlFor="email">Email</label>
         <input className='form__input' {...register('email')} type="email" id="email"/>
@@ -53,7 +53,8 @@ useEffect(() => {
         <label className='form__label' htmlFor="birthday">Birthday</label>
         <input className='form__input' {...register('birthday')} type="date" id="birthday"/>
       </div>
-      <button className='form__btn'>{ updateInfo ? 'Update' : 'Create' }</button>
+      <br />
+      <button className='form__btn'>{ updateInfo ? 'UPDATE' : 'CREATE' }</button>
     </form>
   );
 }

@@ -11,14 +11,16 @@ const UserCard = ( { user, deleteUserById, setUpdateInfo, handleOpen }) => {
         handleOpen()
     }
   return (
-    <article>
+    <article className='userCard'>
         <h2>{`${user.first_name} ${user.last_name}`}</h2>
         <ul>
-            <li><span>Email</span>{user.email}</li>
-            <li><span>Birthday</span>{user.birthday}</li>
+            <li><span><b>Email: </b></span>{user.email}</li>
+            <li><span><b>Birthday: </b></span>{user.birthday}</li>
         </ul>
-        <button onClick={handleDelete}>Delete</button>
-        <button onClick={handleUpdate}>Update</button>
+        <div className='userCard-btn'>
+            <button className='userCard-btn-item' onClick={handleDelete}>Delete</button>
+            <button className='userCard-btn-item' onClick={handleUpdate}>Update</button>
+        </div>
     </article>
   )
 }

@@ -58,7 +58,7 @@ const handleClose = () => setIsOpen(false)
   return (
     <div className="app">
       <h1>USERS</h1>
-      <button onClick={handleOpen} className="app__btn-form">Open Form</button>
+      <button onClick={handleOpen} className="app__btn-form">+ CREATE NEW USER</button>
       <div className={`app__form ${isOpen && 'app__form-visible'}`} >
         <FormUser 
           createNewUser={createNewUser}
@@ -68,7 +68,8 @@ const handleClose = () => setIsOpen(false)
           setUpdateInfo={setUpdateInfo}
         />
       </div>
-      <div>
+      <br />
+      <div className='app__users'>
         {
           users?.map(user => (
             <UserCard 
