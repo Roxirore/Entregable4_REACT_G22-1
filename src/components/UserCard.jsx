@@ -1,9 +1,13 @@
 import React from 'react'
 
-const UserCard = ( { user, deleteUserById }) => {
+const UserCard = ( { user, deleteUserById, setUpdateInfo }) => {
 
     const handleDelete = () => {
         deleteUserById(user.id)
+    }
+
+    const handleUpdate = () => {
+        setUpdateInfo(user)
     }
   return (
     <article>
@@ -13,7 +17,7 @@ const UserCard = ( { user, deleteUserById }) => {
             <li><span>Birthday</span>{user.birthday}</li>
         </ul>
         <button onClick={handleDelete}>Delete</button>
-        <button>Update</button>
+        <button onClick={handleUpdate}>Update</button>
     </article>
   )
 }
